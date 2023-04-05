@@ -6,9 +6,10 @@ void disclamier()
     cout<<"----------------------------------------DISCLAIMER----------------------------------------\nYou are responsible for your own money.\nPlease don't come to me after fucking it all your funds.\nBut I noticed if we loss 2 bet conssectutivly then the next one we can win.\n\n";
 }
 
-void profit(int first, int second, int third, int &pt, bool &flag)
+void profit(int &first, int &second, int &third, int &pt, bool &flag)
 {
     float first1, first2, second1, second2, third1, third2;
+    up:
     first1 = ((first - (float(first)/40)*2)*2)-first;
     first2 = ((first - (float(first)/40)*2)*1.5)-first;
     second1 = ((second - (float(second)/40)*2)*2)-(first+second);
@@ -18,6 +19,16 @@ void profit(int first, int second, int third, int &pt, bool &flag)
     // first1 = -1;
     if((first1<0 || first2<0) || (second1<0 || second2<0) || (third1<0 || third2<0))
     {
+        first = first - 10;
+        second = 2.4*first;
+        third = 8 * first;
+        profit(first, second, third, pt, flag);
+        goto up;
+    }
+
+    if((first1<0 || first2<0) || (second1<0 || second2<0) || (third1<0 || third2<0))
+    {
+        // cout<<",,,,,,,,,,,,,,,,,,,,,,";
         pt=1;
     }
     else
