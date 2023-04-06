@@ -6,9 +6,9 @@ void disclamier()
     cout<<"----------------------------------------DISCLAIMER----------------------------------------\nYou are responsible for your own money.\nPlease don't come to me after fucking it all your funds.\nBut I noticed if we loss 2 bet conssectutivly then the next one we can win.\n\n";
 }
 
-void invest(int a, float b, int &first, int &second, int &third, int flag2);
+void invest(int a, float b, int &first, int &second, int &third, int flag2, int a2);
 
-void profit(int &first, int &second, int &third, int &pt, bool &flag, int &a, float &b)
+void profit(int &first, int &second, int &third, int &pt, bool &flag, int &a, float &b, int a2)
 {
     float first1, first2, second1, second2, third1, third2;
     up:
@@ -24,14 +24,14 @@ void profit(int &first, int &second, int &third, int &pt, bool &flag, int &a, fl
         bool flag3=0;
         a = a - 10;
         b = float(1140)/a;
-        invest(a, b, first, second, third, flag3);
+        invest(a, b, first, second, third, flag3, a2);
         goto up;
     }
 
-    if((first1<0 || first2<0) || (second1<0 || second2<0) || (third1<0 || third2<0))
-    {
-        pt=1;
-    }
+    // if((first1<0 || first2<0) || (second1<0 || second2<0) || (third1<0 || third2<0))
+    // {
+    //     pt=1;
+    // }
     else
     {
         if(flag==1)
@@ -50,7 +50,7 @@ void profit(int &first, int &second, int &third, int &pt, bool &flag, int &a, fl
     }
 }
 
-void invest(int a, float b, int &first, int &second, int &third, int flag2)
+void invest(int a, float b, int &first, int &second, int &third, int flag2, int a2)
 {
     int pt = 0;
     bool flag = 0;
@@ -65,11 +65,11 @@ void invest(int a, float b, int &first, int &second, int &third, int flag2)
     // cout<< "Value is:"<< second <<endl;
     // cout<< "Value is:"<< third <<endl;
 
-    profit(first, second, third, pt, flag, a, b);
+    profit(first, second, third, pt, flag, a, b, a2);
 
     if (flag2==1)
     {
-        if(first+second+third<=a && pt==0)
+        if(first+second+third<=a2 )
         {
             cout<<"************************************************************************************\n";
             cout<<"Play your first bid at: "<<first<<endl;
@@ -81,13 +81,14 @@ void invest(int a, float b, int &first, int &second, int &third, int flag2)
         }
         else
         {
-            cout<<"Contact program creater.\nName = Himanshu Soni \nInsta ID:- 8king_soni8\n";
+            profit(first, second, third, pt, flag, a, b, a2);
+            // cout<<"Contact program creater.\nName = Himanshu Soni \nInsta ID:- 8king_soni8\n";
         }
     }
 }
 
 
-void pro(int first, int second, int third, int &a, float &b)
+void pro(int first, int second, int third, int &a, float &b, int a2)
 {
     int p=2,pt=0;
     bool flag = 1;
@@ -106,22 +107,23 @@ void pro(int first, int second, int third, int &a, float &b)
     }
     if(p==1)
     {
-        profit(first, second , third, pt, flag, a, b);
+        profit(first, second , third, pt, flag, a, b, a2);
     }
 }
 
 int main()
 {
-    int a , first, second , third ;
+    int a , first, second , third ,a2;
     float b;
     bool flag2=1;
     disclamier();
     cout<<"Enter your funds $$$(not decimal): ";
-    cin>>a;
+    cin>>a2;
+    a=a2+10;
     b = float(1140)/a;
-    invest(a, b, first, second, third, flag2);
+    invest(a, b, first, second, third, flag2, a2);
 
-    pro(first, second, third, a, b);
+    pro(first, second, third, a, b, a2);
 
     for (int i = 0; 1 ; i++)
     {
