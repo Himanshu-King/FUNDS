@@ -38,14 +38,14 @@ void profit(int &first, int &second, int &third, int &pt, int &flag, int &a, flo
         if(flag==1)
         {
             cout<<"************************************************************************************\n";
-            cout<<"If 1 color win in bid 1 then you will get: "<< first1 << endl;
-            cout<<"If 2 color win in bid 1 then you will get: "<< first2 << endl;
+            cout<<"If 1 color win in bid 1 then you will get: "<< first1 <<", Net Balance:- "<< a2+first1 <<", Profit %:- " << float(first1)/a2*100 << endl;
+            cout<<"If 2 color win in bid 1 then you will get: "<< first2 <<", Net Balance:- "<< a2+first2 <<", Profit %:- " << float(first2)/a2*100<< endl;
             cout<<"\n----------------------------------------------------\n";
-            cout<<"If 1 color win in bid 2 then you will get: "<< second1 << endl;
-            cout<<"If 2 color win in bid 2 then you will get: "<< second2 << endl;
+            cout<<"If 1 color win in bid 2 then you will get: "<< second1 <<", Net Balance:- "<< a2+second1 <<", Profit %:- " << float(second1)/a2*100<< endl;
+            cout<<"If 2 color win in bid 2 then you will get: "<< second2 <<", Net Balance:- "<< a2+second2 <<", Profit %:- " << float(second2)/a2*100<< endl;
             cout<<"\n----------------------------------------------------\n";
-            cout<<"If 1 color win in bid 3 then you will get: "<< third1 << endl;
-            cout<<"If 2 color win in bid 3 then you will get: "<< third2 << endl;
+            cout<<"If 1 color win in bid 3 then you will get: "<< third1 <<", Net Balance:- "<< a2+third1 <<", Profit %:- " << float(third1)/a2*100<< endl;
+            cout<<"If 2 color win in bid 3 then you will get: "<< third2 <<", Net Balance:- "<< a2+third2 <<", Profit %:- " << float(third2)/a2*100<< endl;
             cout<<"************************************************************************************\n";
         }
     }
